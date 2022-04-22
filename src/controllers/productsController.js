@@ -18,9 +18,8 @@ const controller = {
     const producto = products.find((p) => idDetail == p.id);
     res.render("detail", { producto });
   },
-};
-/* 
-  // Create - Form to create
+
+  /* // Create - Form to create
   create: (req, res) => {
     // Do the magic
   },
@@ -28,21 +27,27 @@ const controller = {
   // Create -  Method to store
   store: (req, res) => {
     // Do the magic
-  },
+  }, */
 
   // Update - Form to edit
   edit: (req, res) => {
-    // Do the magic
+    let idEdit = req.params.id;
+    const productoEdit = products.find((p) => idEdit == p.id);
+    res.render("product-edit-form", { productoEdit });
   },
+
+  /* 
   // Update - Method to update
   update: (req, res) => {
     // Do the magic
-  },
+  }, */
 
   // Delete - Delete one product from DB
   destroy: (req, res) => {
-    // Do the magic
+    /*  let idEdit = req.params.id;
+    const productoEliminado = products.find((p) => idEdit == p.id); */
+    res.redirect("/");
   },
-}; */
+};
 
 module.exports = controller;
